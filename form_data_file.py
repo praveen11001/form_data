@@ -16,10 +16,10 @@ df = pd.DataFrame(my_response_list)
 csv_link = 'https://docs.google.com/spreadsheets/d/1QtWmX5YQD5aswwOYOYerlwdWNwZcmFkxWTr_zAbV9Rk/edit?usp=sharing'
 
 # Read the CSV data into a pandas DataFrame
-df = pd.read_csv(csv_link)
+new_data = pd.read_csv(csv_link)
 
 # Now you can work with the 'df' DataFrame containing your Google Sheets data
-pd.dataframe(df)
+pd.dataframe(new_data)
 ---------------
 
 # Function to apply color to the "Age" column based on a condition
