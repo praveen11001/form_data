@@ -9,13 +9,5 @@ st.text('We take responses from our customers to reflect on it & provide a quali
 url = "https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt"
 my_response_list = pd.read_csv(url)
 
-# Function to apply color coding to calories column
-def color_calories(val):
-    color = 'red' if float(val) > 100 else 'black'
-    return f'color: {color}'
 
-# Apply the color coding function to the DataFrame
-styled_df = my_response_list.style.format({'calories': color_calories})
-
-# Display the DataFrame with formatting using st.dataframe
-st.dataframe(styled_df, unsafe_allow_html=True)
+st.dataframe(my_response_list)
