@@ -14,9 +14,15 @@ df = pd.DataFrame(my_response_list)
 
 # Function to apply color to the "Age" column based on a condition
 def color_age(val):
-    color = 'red' 
-    if val < 25 
-    else 'white'
+    color = ''
+
+    if val < 25:
+        color = 'red'
+    elif val > 25 and val < 50:
+        color = 'yellow'
+    else:
+        color = 'green'
+        
     return f'color: {color}'
 
 # Apply the style to the DataFrame
