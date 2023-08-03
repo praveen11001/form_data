@@ -14,6 +14,8 @@ def color_calories(val):
     color = 'red' if float(val) > 100 else 'black'
     return f'color: {color}'
 
-# Apply the color coding function to the DataFrame and display it
+# Apply the color coding function to the DataFrame
 styled_df = my_response_list.style.applymap(color_calories, subset=['calories'])
-st.dataframe(styled_df)
+
+# Display the DataFrame with formatting using st.table
+st.table(styled_df)
