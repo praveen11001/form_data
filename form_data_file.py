@@ -16,12 +16,12 @@ df = pd.DataFrame(my_response_list)
 def color_age(val):
     color = ''
 
-    if val < 25:
-        color = 'red'
-    elif val > 25 and val < 50:
+    if val > 25 and val < 50:
+        color = 'green'
+    elif val > 50 and val < 100:
         color = 'yellow'
     else:
-        color = 'green'
+        color = 'red'
         
     return f'color: {color}'
 
