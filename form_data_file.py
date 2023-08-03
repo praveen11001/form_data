@@ -10,20 +10,13 @@ url = "https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt"
 my_response_list = pd.read_csv(url)
 
 
-
-
-# Sample DataFrame
-data = {
-    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
-    'Age': [25, 30, 22, 27],
-    'Score': [85, 92, 78, 80]
-}
-
 df = pd.DataFrame(my_response_list)
 
 # Function to apply color to the "Age" column based on a condition
 def color_age(val):
-    color = 'red' if val < 25 else 'black'
+    color = 'red' 
+    if val < 25 
+    else 'white'
     return f'color: {color}'
 
 # Apply the style to the DataFrame
