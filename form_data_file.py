@@ -10,9 +10,10 @@ url = "https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt"
 my_response_list = pd.read_csv(url)
 
 # Function to apply color coding to calories column
-def color_calories(val):
-    color = 'red' if val > 100 else 'black'
-    return f'color: {color}'
+def highlight_calories(s):
+    is_max = s == s.max()
+    is_min = s == s.min()
+    return ['background-color: red' if v else 'background-color: green' for v in is_max]
 
-# Apply the color coding function to the DataFrame and display it
-st.dataframe(my_response_list.style.applymap(color_calories, subset=['calories']))
+# Apply the highlight function to the DataFrame and display it
+st.dataframe(my_response_list.style.apply(highlight_calories, subset=['calories'], axis=0))
