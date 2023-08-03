@@ -15,7 +15,7 @@ def color_calories(val):
     return f'color: {color}'
 
 # Apply the color coding function to the DataFrame
-styled_df = my_response_list.style.applymap(color_calories, subset=['calories'])
+styled_df = my_response_list.style.format({'calories': color_calories})
 
-# Display the DataFrame with formatting using st.table
-st.table(styled_df)
+# Display the DataFrame with formatting using st.dataframe
+st.dataframe(styled_df, unsafe_allow_html=True)
