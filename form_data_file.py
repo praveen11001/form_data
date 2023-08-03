@@ -11,3 +11,24 @@ my_response_list = pd.read_csv(url)
 
 
 st.dataframe(my_response_list)
+
+
+# Sample DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Age': [25, 30, 22, 27],
+    'Score': [85, 92, 78, 80]
+}
+
+df = pd.DataFrame(data)
+
+# Function to apply color to the "Age" column based on a condition
+def color_age(val):
+    color = 'red' if val < 25 else 'black'
+    return f'color: {color}'
+
+# Apply the style to the DataFrame
+styled_df = df.style.applymap(color_age, subset=['Age'])
+
+# Display the styled DataFrame
+styled_df
