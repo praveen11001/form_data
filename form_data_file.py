@@ -19,7 +19,7 @@ csv_link = 'https://docs.google.com/spreadsheets/d/1QtWmX5YQD5aswwOYOYerlwdWNwZc
 df = pd.read_csv(csv_link)
 
 # Now you can work with the 'df' DataFrame containing your Google Sheets data
-print(df)
+st.dataframe(df)
 ---------------
 
 # Function to apply color to the "Age" column based on a condition
