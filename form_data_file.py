@@ -10,7 +10,6 @@ url = "https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt"
 my_response_list = pd.read_csv(url)
 
 
-st.dataframe(my_response_list)
 
 
 # Sample DataFrame
@@ -20,7 +19,7 @@ data = {
     'Score': [85, 92, 78, 80]
 }
 
-df = pd.DataFrame(data)
+df = pd.DataFrame(my_response_list)
 
 # Function to apply color to the "Age" column based on a condition
 def color_age(val):
@@ -28,7 +27,7 @@ def color_age(val):
     return f'color: {color}'
 
 # Apply the style to the DataFrame
-styled_df = df.style.applymap(color_age, subset=['Age'])
+styled_df = df.style.applymap(color_age, subset=['Calories'])
 
 # Display the styled DataFrame
 styled_df
